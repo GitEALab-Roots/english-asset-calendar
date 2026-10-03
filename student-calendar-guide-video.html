@@ -8,15 +8,18 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 <style>
 :root{
-  --paper:#F4F1EA; --card:#FFFDF8; --ink:#191A1C; --mid:#6B6A66;
+  --paper:#F4F1EA; --card:#FFFDF8; --ink:#191A1C; --text:#46423D; --mid:#6B6A66;
   --line:#DCD6C9; --accent:#C8492A; --accent-soft:#F6E2DA;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
+/* 本文の1行の最大幅。ガイド資料（student-calendar-guide.html）と同じ値 */
+:root{--measure:748px}
 body{
-  margin:0; background:var(--paper); color:var(--ink); line-height:1.95;
+  margin:0; background:var(--paper); color:var(--text); line-height:1.95; letter-spacing:.08em;
   font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
   font-size:17px; font-feature-settings:"palt" 1; text-wrap:pretty;
+  line-break:strict; /* 長音記号「ー」や小さいかな（ュ・ッなど）を行頭に置かない */
 }
 a{color:var(--accent)} a:hover{color:#8F3119}
 .bar{
@@ -35,11 +38,11 @@ a{color:var(--accent)} a:hover{color:#8F3119}
 .wrap{max-width:1080px; margin:0 auto; padding:0 24px 96px}
 header.hero{padding:72px 0 56px; border-bottom:2px solid var(--ink)}
 .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin:0 0 18px}
-h1{font-size:clamp(30px,5vw,52px); line-height:1.28; margin:0 0 20px; letter-spacing:-.01em; font-weight:800}
-.lede{max-width:44em; font-size:17px; margin:0 0 18px}
+h1{font-size:clamp(30px,5vw,52px); line-height:1.35; margin:0 0 20px; letter-spacing:.04em; font-weight:800; color:var(--ink)}
+.lede{max-width:var(--measure); font-size:17px; margin:0 0 18px}
 .block{padding:56px 0; border-bottom:1px solid var(--line)}
-h2{font-size:clamp(21px,2.6vw,27px); line-height:1.5; margin:0 0 26px; font-weight:800; letter-spacing:-.005em}
-p{margin:0 0 20px; max-width:44em}
+h2{font-size:clamp(21px,2.6vw,27px); line-height:1.5; margin:0 0 26px; font-weight:800; letter-spacing:.05em; color:var(--ink)}
+p{margin:0 0 20px; max-width:var(--measure)}
 
 /* 動画枠(16:9)。公開時は .placeholder を削除し、YouTubeのiframeを貼り付ける */
 .video{position:relative; width:100%; max-width:880px; aspect-ratio:16/9; border:1px solid var(--line); background:var(--card); border-radius:4px; overflow:hidden}
@@ -51,13 +54,13 @@ p{margin:0 0 20px; max-width:44em}
 
 .links{display:grid; gap:14px; max-width:880px}
 .url{border:1px solid var(--line); background:var(--card); border-radius:4px; padding:18px 20px}
-.url .lab{display:block; font-size:15px; font-weight:800; margin-bottom:4px}
+.url .lab{display:block; font-size:15px; font-weight:800; margin-bottom:4px; color:var(--ink)}
 .url .desc{display:block; font-size:14px; color:var(--mid); margin-bottom:8px}
 .url a{font-size:14px; word-break:break-all}
 .end{padding:56px 0 0}
 
 @media (max-width:760px){
-  body{font-size:16px; line-height:1.9}
+  body{font-size:16px; line-height:1.9; letter-spacing:.06em}
   .wrap{padding:0 18px 72px}
   header.hero{padding:44px 0 36px}
   .block{padding:40px 0}
