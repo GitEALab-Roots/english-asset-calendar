@@ -103,12 +103,13 @@ figcaption{font-size:14px; color:var(--mid); margin-top:10px; max-width:var(--me
 .device-note a{color:#31596F}
 /* 版のラベル（スマートフォン・タブレット版と対になる） */
 .edition{display:inline-block; font-size:13px; font-weight:700; letter-spacing:.08em; color:#8F3119; background:var(--accent-soft); padding:3px 12px; border-radius:3px; margin:0 0 14px}
-.box.prep{margin:30px 0 0}
+/* 上のリンク枠（線で囲んだカード＝別ページへ移動）と区別するため、読む内容の枠は淡い朱色の面で表示する */
+.box.prep{margin:30px 0 0; background:#FAEEE8}
 /* ヒントマーク付きのラベル（スマートフォン・タブレット版のポイント枠と同じ見た目） */
 .box.prep .lab{display:flex; align-items:center; gap:10px; color:#8F3119}
 .box.prep .lab .hint-ic{flex:none; width:26px; height:26px; color:var(--accent); margin-top:-1px}
 /* 用語についての補足。手順の※注記と区別するため、薄い背景の枠にする */
-.term-note{margin:20px 0 0; padding:12px 16px; background:var(--paper); border-radius:3px; font-size:14px; line-height:1.8; color:var(--text)}
+.term-note{margin:20px 0 0; padding:12px 16px; background:var(--card); border-radius:3px; font-size:14px; line-height:1.8; color:var(--text)}
 .term-note-lab{display:block; font-size:12px; font-weight:700; letter-spacing:.14em; color:#8F3119; margin-bottom:2px}
 .box .steps{margin:12px 0 0}
 .box .steps li{margin:0 0 10px}
