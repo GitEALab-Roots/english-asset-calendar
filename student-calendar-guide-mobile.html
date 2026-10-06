@@ -137,7 +137,8 @@ figcaption{font-size:14px; color:var(--mid); margin-top:10px; max-width:var(--me
 .dev[aria-pressed="true"]{background:var(--accent); color:#fff}
 .dev:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
 .choose-note{font-size:13px; color:var(--mid); margin:10px 0 0; line-height:1.7}
-.pane{border-top:2px solid var(--ink); margin-top:56px; scroll-margin-top:64px}
+.pane{margin-top:56px; scroll-margin-top:64px}
+html:not(.js) .pane + .pane{border-top:2px solid var(--ink)}
 .js .pane{display:none}
 .js .pane.on{display:block}
 .pane-head{padding:40px 0 8px}
